@@ -8,28 +8,19 @@ public:
         pair['{'] = '}';
         pair['['] = ']';
 
-        vector<char> unclosed = {};
+        stack<char> unclosed;
 
         for (char c : s) {
             if (pair.count(c) != 0) {
-                unclosed.push_back(c);
-            } else if (unclosed.size() > 0) {
-                char u = unclosed.back();
-
-                if (c == pair[u]) {
-                    unclosed.pop_back();
-                } else {
-                    return false;
-                }
+                unclosed.push(c);
             } else {
-                return false;
+                if (unclosed.empty()) return false;   
+                if (c != pair[unclosed.top()]) return false;
+
+                unclosed.pop();
             }
         }
 
-        if (unclosed.size() > 0) {
-            return false;
-        }
-
-        return true;
+        return unclosed.empty();
     }
 };
