@@ -2,8 +2,8 @@
 
 class Solution {
 private:
-    std::vector<int> mergeArr(const std::vector<int>& nums1, const std::vector<int>& nums2) {
-        std::vector<int> result;
+    vector<int> mergeArr(const vector<int>& nums1, const vector<int>& nums2) {
+        vector<int> result;
         int index1 = 0;
         int index2 = 0;
 
@@ -25,7 +25,7 @@ private:
 
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
-        const std::vector<int> merged = mergeArr(nums1, nums2);
+        const vector<int> merged = mergeArr(nums1, nums2);
 
         if (merged.size() % 2 == 1) {
             return merged[merged.size() / 2];

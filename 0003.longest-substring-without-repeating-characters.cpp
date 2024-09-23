@@ -4,13 +4,13 @@ class Solution {
     public:
         int lengthOfLongestSubstring(string s) {
             int result = 0;
-            std::string current = "";
+            string current = "";
     
             for (int i = 0; i < s.length(); i++) {
                 char c = s.at(i);
                 int index = current.find(c);
     
-                if (index != std::string::npos) {
+                if (index != string::npos) {
                     if (result < current.length()) {
                         result = current.length();
                     }
