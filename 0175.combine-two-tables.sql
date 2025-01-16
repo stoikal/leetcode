@@ -1,7 +1,13 @@
 -- https://leetcode.com/problems/combine-two-tables/
 
--- Write your PostgreSQL query statement below
-select firstName, lastName, city, state
-from person p
-left join address a
-on p.personId = a.personId;
+SELECT
+    firstName,
+    lastName,
+    city,
+    state
+FROM
+    person
+LEFT JOIN
+    address
+ON
+    person.personId = address.personId;

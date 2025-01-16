@@ -1,5 +1,10 @@
 -- https://leetcode.com/problems/duplicate-emails/
 
-select email as Email from person
-group by email
-having count(Email) > 1;
+SELECT
+    email AS Email
+FROM
+    person
+GROUP BY
+    email
+HAVING
+    count(Email) > 1;
